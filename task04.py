@@ -83,27 +83,26 @@ def plot_timings(timings, xlabel, ylabel, title, save_to_file):
 
 # Функция для вывода сводной статистики по времени выполнения экспериментов
 def print_summary(timings, description):
-    # Вычисление минимального, максимального, среднего времени выполнения,
-    # стандартного отклонения и медианы из списка timings
+    # Вычисление минимального, максимального, среднего времени выполнения, стандартного отклонения и медианы из списка timings
     min_time = min(timings)
     max_time = max(timings)
     avg_time = np.mean(timings)
     std_dev = np.std(timings)
     median = np.median(timings)
 
-    print(f"{description}:")
-    print(f"  Min time: {min_time:.6f} s")
-    print(f"  Max time: {max_time:.6f} s")
-    print(f"  Avg time: {avg_time:.6f} s")
-    print(f"  Std deviation: {std_dev:.6f} s")
-    print(f"  Median: {median:.6f} s")
+    # Вывод описания реализации DGEMM
+    print(f"  Min time: {min_time:.6f} s")     # Вывод минимального времени выполнения
+    print(f"  Max time: {max_time:.6f} s")  # Вывод максимального времени выполнения
+    print(f"  Avg time: {avg_time:.6f} s") # Вывод среднего времени выполнения
+    print(f"  Std deviation: {std_dev:.6f} s") # Вывод стандартного отклонения времени выполнения
+    print(f"  Median: {median:.6f} s") # Вывод медианы времени выполнения
 
 def main():
-    size = 1000
-    min_val = -10
-    max_val = 10
-    num_runs = 10
-    num_threads = 5
+    size = 1000  # Размер матрицы
+    min_val = -10  # Минимальный диапазон значений элементов матриц
+    max_val = 10 # Максимальный диапазон значений элементов матриц
+    num_runs = 10 # Количество запусков
+    num_threads = 5 # Количество потоков
     # Генерация матриц с заданными размерами и диапазоном значений
     generate_matrices(size, min_val, max_val)
 
